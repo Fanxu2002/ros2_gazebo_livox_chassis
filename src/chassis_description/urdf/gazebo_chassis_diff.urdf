@@ -1,0 +1,316 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="chassis.SLDASM">
+  <link name="base_footprint" />
+
+  <joint name="base_footprint_to_base_link" type="fixed">
+    <origin xyz="0 0 0.2330727279186138" rpy="3.14159265359 1.57079632679 0" />
+    <parent link="base_footprint" />
+    <child link="base_link" />
+  </joint>
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0.228072734582867 -0.00375850445219656 -0.0522643184271548" rpy="0 0 0" />
+      <mass value="0.05" />
+      <inertia ixx="5.20833333333333E-05" ixy="5.55286076706932E-21" ixz="-2.25741069543197E-20" iyy="4.20833333333333E-05" iyz="-3.52615100073128E-22" izz="1.08333333333333E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://chassis_description/meshes/base_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.419607843137255 0.270588235294118 0.470588235294118 0.4" />
+      </material>
+    </visual>
+    </link>
+  <link name="fixed_items">
+    <inertial>
+      <origin xyz="-0.0670736533868715 0.00522990404692169 -0.00292033811636873" rpy="0 0 0" />
+      <mass value="1.96081590488597" />
+      <inertia ixx="0.0869685301037205" ixy="6.39163745645689E-08" ixz="7.7181344710129E-07" iyy="0.0217010273085329" iyz="-1.21642949813537E-06" izz="0.065602499595821" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://chassis_description/meshes/fixed_items.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    </link>
+  <joint name="fixed_items_joint" type="fixed">
+    <origin xyz="0.0673120620772911 -0.00375850445219655 0.00448582103263107" rpy="1.5707963267949 0 0" />
+    <parent link="base_link" />
+    <child link="fixed_items" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <link name="front_right">
+    <inertial>
+      <origin xyz="-1.23182001737776E-07 0.0354019102272813 5.51296193279649E-08" rpy="0 0 0" />
+      <mass value="0.259428239938463" />
+      <inertia ixx="0.00136216281068031" ixy="4.80923773861825E-10" ixz="-4.40164286014686E-10" iyy="0.00241162687278075" iyz="-1.04609215286613E-10" izz="0.00136215983170492" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://chassis_description/meshes/front_right.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    </link>
+  <joint name="front_right_joint" type="fixed">
+    <origin xyz="0.125572734582867 0.158343897850315 -0.21382268634779" rpy="0 1.31280559336702 0" />
+    <parent link="base_link" />
+    <child link="front_right" />
+    <axis xyz="0 1 0" />
+  </joint>
+  <link name="front_right_wheel">
+    <inertial>
+      <origin xyz="0 0.0353975978318701 2.36297093003657E-12" rpy="0 0 0" />
+      <mass value="0.492078704293848" />
+      <inertia ixx="0.000685024208918095" ixy="-1.46073348139392E-19" ixz="-8.13151629364128E-20" iyy="0.00118197177455513" iyz="6.72087910854188E-20" izz="0.000685024208884099" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://chassis_description/meshes/front_right_wheel.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.968627450980392 0.258823529411765 0.258823529411765 1" />
+      </material>
+    </visual>
+    <collision><origin xyz="0 0 0" rpy="1.57079632679 0 0" /><geometry><cylinder radius="0.105" length="0.07" /></geometry></collision></link>
+  <joint name="front_right_wheel_joint" type="continuous">
+    <origin xyz="0 0 0" rpy="0 -0.577811257152481 0" />
+    <parent link="front_right" />
+    <child link="front_right_wheel" />
+    <axis xyz="0 1 0" />
+  </joint>
+  <link name="front_left">
+    <inertial>
+      <origin xyz="1.35158294001236E-08 -0.0353932639104869 5.11564002270148E-09" rpy="0 0 0" />
+      <mass value="0.259428711608086" />
+      <inertia ixx="0.0013621629460603" ixy="7.40413894978209E-11" ixz="-2.64282213870365E-10" iyy="0.00241162997210687" iyz="1.71356834621018E-11" izz="0.00136216302311896" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://chassis_description/meshes/front_left.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    </link>
+  <joint name="front_left_joint" type="fixed">
+    <origin xyz="0.125572734582867 -0.16586090675474 -0.213822686347791" rpy="0 1.31280559336702 0" />
+    <parent link="base_link" />
+    <child link="front_left" />
+    <axis xyz="0 1 0" />
+  </joint>
+  <link name="front_left_wheel">
+    <inertial>
+      <origin xyz="5.55111512312578E-17 -0.0353975975630757 2.36291541888534E-12" rpy="0 0 0" />
+      <mass value="0.492078704293848" />
+      <inertia ixx="0.000685024208918095" ixy="-1.22384251274877E-19" ixz="-5.42101086242752E-20" iyy="0.00118197177455513" iyz="2.82340898889023E-20" izz="0.000685024208884099" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://chassis_description/meshes/front_left_wheel.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.968627450980392 0.258823529411765 0.258823529411765 1" />
+      </material>
+    </visual>
+    <collision><origin xyz="0 0 0" rpy="1.57079632679 0 0" /><geometry><cylinder radius="0.105" length="0.07" /></geometry></collision></link>
+  <joint name="front_left_wheel_joint" type="continuous">
+    <origin xyz="0 0 0" rpy="0 -0.577811257152481 0" />
+    <parent link="front_left" />
+    <child link="front_left_wheel" />
+    <axis xyz="0 1 0" />
+  </joint>
+  <link name="rare_left">
+    <inertial>
+      <origin xyz="9.49505991887367E-08 -0.035393286004898 1.23302397445069E-07" rpy="0 0 0" />
+      <mass value="0.259428227502147" />
+      <inertia ixx="0.00136216080806037" ixy="-2.26332760363519E-10" ixz="1.69725354132394E-09" iyy="0.00241162679846269" iyz="-3.89204321173845E-10" izz="0.00136216174542507" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://chassis_description/meshes/rare_left.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    </link>
+  <joint name="rare_left_joint" type="fixed">
+    <origin xyz="0.125572734582867 -0.16586090675474 0.166211482877379" rpy="0 -1.0423567919101 0" />
+    <parent link="base_link" />
+    <child link="rare_left" />
+    <axis xyz="0 1 0" />
+  </joint>
+  <link name="rare_left_wheel">
+    <inertial>
+      <origin xyz="2.32464048011138E-12 -0.0353975975630755 4.230227279578E-13" rpy="0 0 0" />
+      <mass value="0.492078704293848" />
+      <inertia ixx="0.000685024208885188" ixy="3.78132284208099E-20" ixz="-5.9879062971023E-15" iyy="0.00118197177455512" iyz="1.31780861220297E-20" izz="0.000685024208917004" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://chassis_description/meshes/rare_left_wheel.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.968627450980392 0.258823529411765 0.258823529411765 1" />
+      </material>
+    </visual>
+    <collision><origin xyz="0 0 0" rpy="1.57079632679 0 0" /><geometry><cylinder radius="0.105" length="0.07" /></geometry></collision></link>
+  <joint name="rare_left_wheel_joint" type="continuous">
+    <origin xyz="0 0 0" rpy="0 -0.57781125715248 0" />
+    <parent link="rare_left" />
+    <child link="rare_left_wheel" />
+    <axis xyz="0 1 0" />
+  </joint>
+  <link name="rare_right">
+    <inertial>
+      <origin xyz="-1.10520934071268E-09 0.0354019333270385 5.44597289486859E-09" rpy="0 0 0" />
+      <mass value="0.259428831657285" />
+      <inertia ixx="0.0013621636268984" ixy="3.14627818978861E-11" ixz="4.97141442595828E-11" iyy="0.00241163082582338" iyz="-7.17181289090968E-11" izz="0.0013621631462981" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://chassis_description/meshes/rare_right.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    </link>
+  <joint name="rare_right_joint" type="fixed">
+    <origin xyz="0.125572734582867 0.158343897850315 0.166211482877379" rpy="0 -1.0423567919101 0" />
+    <parent link="base_link" />
+    <child link="rare_right" />
+    <axis xyz="0 1 0" />
+  </joint>
+  <link name="rare_right_wheel">
+    <inertial>
+      <origin xyz="2.32472374683823E-12 0.0353975978318702 4.22994972382185E-13" rpy="0 0 0" />
+      <mass value="0.492078704293848" />
+      <inertia ixx="0.000685024208885188" ixy="2.07548779155651E-21" ixz="-5.9879367902884E-15" iyy="0.00118197177455512" iyz="3.01757565830602E-20" izz="0.000685024208917004" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://chassis_description/meshes/rare_right_wheel.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.968627450980392 0.258823529411765 0.258823529411765 1" />
+      </material>
+    </visual>
+    <collision><origin xyz="0 0 0" rpy="1.57079632679 0 0" /><geometry><cylinder radius="0.105" length="0.07" /></geometry></collision></link>
+  <joint name="rare_right_wheel_joint" type="continuous">
+    <origin xyz="0 0 0" rpy="0 -0.57781125715248 0" />
+    <parent link="rare_right" />
+    <child link="rare_right_wheel" />
+    <axis xyz="0 1 0" />
+  </joint>
+  <link name="lidar_link">
+    <inertial><origin xyz="0 0 0" rpy="0 0 0" /><mass value="0.265000" /><inertia ixx="0.0001728021" ixy="0" ixz="0" iyy="0.0001728021" iyz="0" izz="0.0001866042" /></inertial><visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://chassis_description/meshes/lidar_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0" /><geometry><box size="0.065 0.065 0.060" /></geometry></collision></link>
+  <joint name="lidar_joint" type="fixed">
+    <origin xyz="-0.04 0.00999999999999999 -0.15" rpy="1.57079632679489 -1.5358897417551 0" />
+    <parent link="base_link" />
+    <child link="lidar_link" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <link name="front_axel">
+    <inertial>
+      <origin xyz="0.000572734582866663 0.00117731365220958 0.00375850445219654" rpy="0 0 0" />
+      <mass value="0.0361283155162826" />
+      <inertia ixx="0.000637288432242427" ixy="-1.58542950739347E-24" ixz="-8.34365827143462E-20" iyy="0.000637288432242427" iyz="1.55301521119099E-19" izz="4.51603943953533E-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://chassis_description/meshes/front_axel.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    </link>
+  <joint name="front_axel_joint" type="fixed">
+    <origin xyz="0.125 0 -0.215" rpy="1.5707963267949 0 0" />
+    <parent link="base_link" />
+    <child link="front_axel" />
+    <axis xyz="0 0 -1" />
+  </joint>
+  <link name="rear_axel">
+    <inertial>
+      <origin xyz="0.00375850445219643 0.00121148287737907 -0.000572734582866746" rpy="0 0 0" />
+      <mass value="0.0361283155162826" />
+      <inertia ixx="4.51603943953533E-07" ixy="5.98891791213592E-21" ixz="-3.75471127944586E-20" iyy="0.000637288432242427" iyz="-2.10241739023749E-23" izz="0.000637288432242427" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://chassis_description/meshes/rear_axel.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    </link>
+  <joint name="rear_axel_joint" type="fixed">
+    <origin xyz="0.125 0 0.165" rpy="1.5707963267949 0 -1.5707963267949" />
+    <parent link="base_link" />
+    <child link="rear_axel" />
+    <axis xyz="-1 0 0" />
+  </joint>
+
+
+  <gazebo>
+    <plugin name="gazebo_ros_diff_drive" filename="libgazebo_ros_diff_drive.so">
+
+      <ros>
+        <namespace>/</namespace>
+        <remapping>cmd_vel:=cmd_vel</remapping>
+      </ros>
+
+      <left_joint>front_left_wheel_joint</left_joint>
+      <right_joint>front_right_wheel_joint</right_joint>
+
+      <wheel_separation>0.55</wheel_separation>
+      <wheel_diameter>0.21</wheel_diameter>
+
+      <max_wheel_torque>500.0</max_wheel_torque>
+      <max_wheel_acceleration>50.0</max_wheel_acceleration>
+
+      <command_topic>cmd_vel</command_topic>
+
+      <publish_odom>true</publish_odom>
+      <publish_odom_tf>true</publish_odom_tf>
+      <publish_wheel_tf>false</publish_wheel_tf>
+
+      <odometry_frame>odom</odometry_frame>
+      <robot_base_frame>base_footprint</robot_base_frame>
+
+    </plugin>
+  </gazebo>
+
+<gazebo reference="rare_left_wheel"><mu1>10.0</mu1><mu2>10.0</mu2><kp>1000000.0</kp><kd>10.0</kd><material>Gazebo/Red</material></gazebo><gazebo reference="front_right_wheel"><mu1>10.0</mu1><mu2>10.0</mu2><kp>1000000.0</kp><kd>10.0</kd><material>Gazebo/Red</material></gazebo><gazebo reference="front_left_wheel"><mu1>10.0</mu1><mu2>10.0</mu2><kp>1000000.0</kp><kd>10.0</kd><material>Gazebo/Red</material></gazebo><gazebo reference="rare_right_wheel"><mu1>10.0</mu1><mu2>10.0</mu2><kp>1000000.0</kp><kd>10.0</kd><material>Gazebo/Red</material></gazebo><gazebo reference="base_link"><material>Gazebo/Grey</material></gazebo><gazebo reference="fixed_items"><material>Gazebo/Grey</material></gazebo><gazebo reference="front_axel"><material>Gazebo/Grey</material></gazebo><gazebo reference="rear_axel"><material>Gazebo/Grey</material></gazebo><gazebo reference="front_left"><material>Gazebo/Black</material></gazebo><gazebo reference="front_right"><material>Gazebo/Black</material></gazebo><gazebo reference="rare_left"><material>Gazebo/Black</material></gazebo><gazebo reference="rare_right"><material>Gazebo/Black</material></gazebo><gazebo reference="lidar_link"><material>Gazebo/Blue</material></gazebo><link name="imu_link"><inertial><origin xyz="0 0 0" rpy="0 0 0" /><mass value="0.001" /><inertia ixx="1e-7" ixy="0" ixz="0" iyy="1e-7" iyz="0" izz="1e-7" /></inertial></link><joint name="lidar_to_imu_joint" type="fixed"><origin xyz="0 0 0" rpy="0 0 0" /><parent link="lidar_link" /><child link="imu_link" /></joint><gazebo reference="imu_link"><sensor name="livox_mid360s_imu_sensor" type="imu"><always_on>true</always_on><update_rate>200</update_rate><visualize>false</visualize><plugin name="livox_mid360s_imu" filename="libgazebo_ros_imu_sensor.so"><ros><namespace>/</namespace><remapping>~/out:=/livox/imu</remapping></ros><frame_name>imu_link</frame_name><initial_orientation_as_reference>false</initial_orientation_as_reference></plugin></sensor></gazebo><link name="livox_scan_link"><inertial><origin xyz="0 0 0" rpy="0 0 0" /><mass value="0.001" /><inertia ixx="1e-7" ixy="0" ixz="0" iyy="1e-7" iyz="0" izz="1e-7" /></inertial></link><joint name="base_footprint_to_livox_scan_link" type="fixed"><origin xyz="0.25 0 0.45" rpy="0 0 0" /><parent link="base_footprint" /><child link="livox_scan_link" /></joint><gazebo reference="livox_scan_link"><sensor name="livox_mid360s_lidar" type="gpu_ray"><always_on>true</always_on><visualize>false</visualize><update_rate>10</update_rate><ray><scan><horizontal><samples>720</samples><resolution>1</resolution><min_angle>-3.14159265</min_angle><max_angle>3.14159265</max_angle></horizontal><vertical><samples>56</samples><resolution>1</resolution><min_angle>-0.122173</min_angle><max_angle>0.907571</max_angle></vertical></scan><range><min>0.1</min><max>70.0</max><resolution>0.01</resolution></range></ray><plugin name="livox_mid360s_lidar_plugin" filename="libgazebo_ros_ray_sensor.so"><ros><namespace>/</namespace><remapping>~/out:=/livox/lidar</remapping></ros><output_type>sensor_msgs/PointCloud2</output_type><frame_name>livox_scan_link</frame_name></plugin></sensor></gazebo></robot>

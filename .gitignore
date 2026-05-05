@@ -1,0 +1,39 @@
+# ROS2 build outputs
+build/
+install/
+log/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# ROS / Gazebo logs
+.ros/
+*.log
+
+# Backup files
+*.bak
+*.backup
+*.old
+*.tmp
+*~
+
+# URDF/script backup files
+*.before*
+old_urdf_backups/
+old_scripts_backup/
+
+# Large media files
+*.mp4
+*.mkv
+*.avi
+*.bag
+*.db3
+
+# RViz autosave
+*.rviz~
+
+# Editor files
+.vscode/
+.idea/
