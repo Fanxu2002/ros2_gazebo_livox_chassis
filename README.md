@@ -1,5 +1,12 @@
 # ROS 2 Gazebo Livox Chassis Simulation
 
+## Simulation Demo
+
+![Gazebo Robot Simulation](src/chassis_description/demo.gif)
+
+[Watch Full Simulation Video](src/chassis_description/demo.mp4)
+
+
 **Four-wheel mobile robot simulation with ROS 2 Humble, Gazebo Classic 11, RViz2, simulated LiDAR and IMU.**
 
 This project uses a SolidWorks-derived URDF chassis with differential-drive control, simulated 360° LiDAR point clouds, IMU measurements, odometry, TF, and trajectory visualization. It includes both GUI and keyboard teleoperation for testing robot motion and ROS 2 sensor integration.
